@@ -28,7 +28,7 @@ export default function Protected() {
   return (
     <div className="container">
       <Head>
-        <title>Members Only</title>
+        <title>Secret Members Area</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -51,9 +51,9 @@ export default function Protected() {
         </main>
       ) : (
         <main>
-          <p>YOU ARE NOT ALLOWED HERE.</p>
+          <p>Keep out.</p>
           <Link href="/">
-            <a>Go back to the grody public space.</a>
+            <a>You are welcome in the public space.</a>
           </Link>
         </main>
       )}

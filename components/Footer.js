@@ -2,9 +2,9 @@ export default function Footer() {
   return (
     <>
       <footer>
-        Made with{' '}
-        <img src="/netliheart.svg" alt="Netlify Logo" className="logo" /> for
-        you
+        Alex Welcing{' '}
+        <img src="/aw.svg" alt="Alex Welcing logo" className="logo" />
+         deployed on Netlify.
       </footer>
       <style jsx>{`
         footer {
