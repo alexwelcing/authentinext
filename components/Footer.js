@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <>
@@ -5,6 +7,9 @@ export default function Footer() {
         Alex Welcing{' '}
         <img src="/aw.svg" alt="Alex Welcing logo" className="logo" />
          deployed on Netlify.
+          <Link href="/policy">
+         <a>tracking policy.</a>
+       </Link>
       </footer>
       <style jsx>{`
         footer {

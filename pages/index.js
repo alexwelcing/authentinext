@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import netlifyAuth from '../netlifyAuth.js'
 
@@ -32,25 +33,30 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Members Only</title>
+        <title>AlexWelcing.com</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <Header text={'Welcome to the Public Space™'} />
+        <Header text={'Free resources.'} />
         <p className="description">
-          We are in a public space, for the people who aren't able to access the super fancy
-          members-only area. You hear snobbish laughter in the distance.
+          This requires no authentication.
         </p>
+        <Image
+        src="/policegetawaywithmurder.jpg"
+        alt="Breonna Taylor was murdered. George Floyd was murdered."
+        width={3089}
+        height={2048}
+      />
         {loggedIn ? (
           <div>
-            You're logged in! Please do visit{' '}
+            If you are already a member, you may also visit{' '}
             <Link href="/protected">
-              <a>the special, members-only space.</a>
+              <a>subscription content.</a>
             </Link>
           </div>
         ) : (
-          <button onClick={login}>Log in here to access the members-only area.</button>
+          <button onClick={login}>You do not have a membership yet, please join here.</button>
         )}
       </main>
 

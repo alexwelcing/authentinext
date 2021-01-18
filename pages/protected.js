@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import Header from '@components/Header'
 import Footer from '@components/Footer'
@@ -28,16 +29,22 @@ export default function Protected() {
   return (
     <div className="container">
       <Head>
-        <title>Secret Members Area</title>
+        <title>Alex Welcing authenticated garden.</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {loggedIn ? (
         <main>
-          <Header text={'Welcome to the Private Space™'} />
+          <Header text={'Alex Welcing authenticated garden.'} />
           <p className="description">
-            Wow, secrets are super cool. Welcome {user?.user_metadata.full_name}!
+            Hey, what's good. I see you there {user?.user_metadata.full_name}!
           </p>
+          <Image
+          src="/twocreatures.jpg"
+          alt="These cats protect our household from all evil."
+          width={3089}
+          height={2048}
+        />
           <button
             onClick={() => {
               netlifyAuth.signout(() => {
@@ -51,9 +58,9 @@ export default function Protected() {
         </main>
       ) : (
         <main>
-          <p>Keep out.</p>
+          <p>You are not logged in yet.</p>
           <Link href="/">
-            <a>You are welcome in the public space.</a>
+            <a>You have to sign-up for this.</a>
           </Link>
         </main>
       )}
